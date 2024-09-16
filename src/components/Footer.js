@@ -79,7 +79,7 @@ const Footer = () => {
           © 2024 Cooking Buddy
           <Link
             className="grey-text text-lighten-4 right"
-            to={{ pathname: "https://github.com/justmatt18/food-recipe" }}
+            to={{ pathname: "https://github.com/manasa030606/cookingbuddy" }}
             target="_blank"
           >
             Github Repo
@@ -88,6 +88,7 @@ const Footer = () => {
       </div>
     </footer>
   );
+  
 };
 
 export default Footer;
