@@ -4,11 +4,11 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
-import AppRouter from "./router";
+import AppRouter from "./router/AppRouter";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRouter />
+    <AppRouter/>
   </React.StrictMode>,
   document.getElementById("root")
 );
