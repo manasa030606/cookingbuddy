@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getIngredientImg, mealDetails } from "../api";
+import { getIngredientImg, mealDetails } from "../api/ApiCall";
 import Ingredients from "../components/Ingredients";
 import Preloader from "../components/Preloader";
 import ReactPlayer from "react-player/youtube";
