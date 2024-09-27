@@ -75,12 +75,12 @@ const SearchBar = () => {
                 <Link to="/ingredients/1" onClick={() => navigateTo("/ingredients/1")}>Ingredients</Link>
               </li>
               <li>
-                <button
+                {/* <button
                   className="btn gradient-btn"
                   onClick={() => navigateTo("/signin")}
                 >
                   Sign In
-                </button>
+                </button> */}
               </li>
             </ul>
           </div>
@@ -115,12 +115,12 @@ const SearchBar = () => {
           <Link to="/ingredients/1" onClick={() => navigateTo("/ingredients/1")}>Ingredients</Link>
         </li>
         <li>
-          <button
+          {/* <button
             className="btn grey lighten-1"
             onClick={() => navigateTo("/signin")}
           >
             Sign In
-          </button>
+          </button> */}
         </li>
       </ul>
     </>
