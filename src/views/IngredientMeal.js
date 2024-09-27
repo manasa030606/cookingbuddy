@@ -4,7 +4,7 @@ import {
   listOfIngredients,
   getIngredientImg,
   filterByMainIngredient,
-} from "../api";
+} from "../api/ApiCall";
 import Meals from "../components/Meals";
 import Preloader from "../components/Preloader";
 import { isEmpty } from "../utils";

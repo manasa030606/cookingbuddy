@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { searchMealByName } from "../api";
+import { searchMealByName } from "../api/ApiCall";
 import Meals from "../components/Meals";
 
 const SearchResult = () => {
