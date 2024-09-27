@@ -1,37 +1,262 @@
+/* Base Styles */
 .custom-nav {
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.no-space {
+  margin-left: 0 !important;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between each nav item */
+}
+
+/* Flexbox for layout */
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav items */
+  align-items: center; /* Vertically center items */
+  padding: 0 15px;
+}
+
+/* Search Field */
+.search-field {
+  max-width: 200px;
+  transition: max-width 0.3s ease;
+}
+
+/* Mobile-first design: mobile default */
+.nav-wrapper, .nav-items, .search-field {
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+/* Sidenav */
+.sidenav {
+  width: 280px; /* Slightly wider for better readability */
+  background: #34495e; /* Darker background for a sleek look */
+  color: white;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  transform: translateX(-100%); /* Initially hidden */
+  overflow-y: auto;
+  height: 100vh; /* Ensure sidenav takes full height */
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.5);
+  padding-top: 40px; /* Add padding at the top for spacing */
+}
+
+.sidenav.open {
+  transform: translateX(0); /* Show sidenav */
+}
+
+.sidenav li {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.sidenav li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidenav li a:hover {
+  color: #ffeb3b; /* Bright yellow hover effect */
+}
+
+.mobile-input {
+  width: 90%;
+  margin: 20px auto;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid white; /* White border for input */
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+
+.mobile-input::placeholder {
+  color: #bdc3c7; /* Placeholder color */
+}
+
+.mobile-input:focus {
+  border-color: #ffeb3b; /* Yellow border on focus */
+}
+
+/* Buttons */
+.gradient-btn {
+  background: linear-gradient(90deg, #007bff, #6a00f4);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  height: 50px; /* Adjust the height if needed to ensure vertical centering */
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(90deg, #0056b3, #5400ba);
+}
+
+
+.sidenav li button {
+  font-size: 18px;
+  padding: 12px 20px;
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  background-color: #e74c3c; /* Red button for better contrast */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidenav li button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.sidenav li button:focus {
+  outline: none;
+}
+
+/* Backdrop for Sidenav */
+.sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Darker backdrop */
+  transition: opacity 0.3s ease;
+  z-index: 998;
+  display: none;
+}
+
+.sidenav-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .search-field {
+    max-width: 100%; /* Full width in mobile */
   }
-  
-  .no-space {
-    margin-left: 0 !important;
+
+  .nav-items {
+    display: none; /* Hide desktop nav items on small screens */
   }
-  
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .custom-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-items {
+    flex-wrap: nowrap; /* Prevent wrapping on small desktops */
+  }
+
+  .search-field {
+    max-width: 150px; /* Shrink the search bar slightly */
+  }
+}
+
+@media (min-width: 1025px) {
   .nav-items {
     display: flex;
-    align-items: center;
   }
-  
-  .nav-items li {
-    margin-left: 20px;
-  }
-  
+
   .search-field {
     max-width: 200px;
   }
-  
+
   .gradient-btn {
-    background: linear-gradient(90deg, #007bff, #6a00f4);
-    border: none;
-    color: white;
-    /* padding: 8px 16px; */
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    padding: 10px 15px;
   }
-  
-  .gradient-btn:hover {
-    background: linear-gradient(90deg, #0056b3, #5400ba);
+}
+
+/* Font size adjustment for better readability */
+body {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+}
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+}
+}
+
+/* Lazy-loaded image for performance */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media queries for input fields */
+@media (min-width: 769px) {
+  .search-field {
+    width: 300px;
   }
-  
+}
+
+@media (min-width: 1025px) {
+  .search-field {
+    width: 350px;
+  }
+}
+
+/* Use CSS variables for easier responsive adjustments */
+:root {
+  --font-small: 16px;
+  --font-medium: 18px;
+  --font-large: 20px;
+  --padding-small: 10px;
+  --padding-medium: 15px;
+  --padding-large: 20px;
+}
+
+/* Use variables */
+body {
+  font-size: var(--font-small);
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: var(--font-medium);
+}
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: var(--font-large);
+}
+}
+
+
+#mobile-demo button{
+  height: 60px;
+}
