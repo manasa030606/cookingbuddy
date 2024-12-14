@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Meals from "../components/Meals";
 import Preloader from "../components/Preloader";
-import { getMeals } from "../api";
+import { getMeals,latestMeals as latestFood } from "../api/ApiCall";
 import PopularIngredients from "../components/PopularIngredients";
-import { latestMeals as latestFood } from "../api";
 import { isEmpty } from "../utils";
 
 const Home = () => {

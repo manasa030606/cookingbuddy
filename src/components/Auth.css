@@ -78,6 +78,10 @@
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
   }
   
   .auth-btn:hover {
